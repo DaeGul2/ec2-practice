@@ -68,6 +68,7 @@ exports.login = async (req, res) => {
 exports.selectOne = async (req, res) => {
     const { name } = req.body;
     const user = await User.findOne({ name });
+    console.log(user)
     if (user.is_select == 0) {  //선택 가능
         const allUsers = await User.find();
 
